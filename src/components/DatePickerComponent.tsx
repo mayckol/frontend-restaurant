@@ -5,11 +5,13 @@ interface IDatePickerComponent {
   startDate?: Date;
   dateFormat: string;
   setStartDate: (date: Date) => void;
+  isRequired?: boolean;
 }
 export function DatePickerComponent({
   dateFormat,
   startDate,
   setStartDate,
+  isRequired = false,
 }: IDatePickerComponent) {
   return (
     <DatePicker
@@ -17,6 +19,7 @@ export function DatePickerComponent({
       onChange={setStartDate}
       dateFormat={dateFormat}
       showMonthYearPicker
+      required={isRequired}
     />
   );
 }

@@ -1,8 +1,13 @@
 interface ICreditCardInput {
   value: string;
   setValue: (value: string) => void;
+  isRequired?: boolean;
 }
-export function InputTypeCardNumber({ value, setValue }: ICreditCardInput) {
+export function InputTypeCardNumber({
+  value,
+  setValue,
+  isRequired = false,
+}: ICreditCardInput) {
   function validateMask(char: string) {
     return !isNaN(Number(char));
   }
@@ -34,6 +39,7 @@ export function InputTypeCardNumber({ value, setValue }: ICreditCardInput) {
       size={20}
       max={16}
       value={value}
+      required={isRequired}
     />
   );
 }
@@ -41,8 +47,13 @@ export function InputTypeCardNumber({ value, setValue }: ICreditCardInput) {
 interface ICreditCardCVV {
   value?: number;
   setValue: (value: number) => void;
+  isRequired?: boolean;
 }
-export function InputTypeCVV({ value, setValue }: ICreditCardCVV) {
+export function InputTypeCVV({
+  value,
+  setValue,
+  isRequired = false,
+}: ICreditCardCVV) {
   function handleCVVInput(e: React.FormEvent<HTMLInputElement>) {
     if (e.currentTarget.value.length > 3) {
       setValue(Number(e.currentTarget.value.substring(0, 3)));
@@ -56,7 +67,7 @@ export function InputTypeCVV({ value, setValue }: ICreditCardCVV) {
       type="number"
       name="cvv"
       placeholder="cvv"
-      max={3}
+      required={isRequired}
       value={value || ""}
     />
   );
