@@ -75,8 +75,8 @@ a:active {
   --light-brown: rgba(140, 111, 94, 1);
   --dark-brown: rgba(140, 54, 46, 1);
 
-  --shadow-default: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  --default-radius: 5px;
+  --shadow-default: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  --default-radius: 4px;
   --border-secondary: 1px solid blue;
   --border-contact-info: #fff;
   --transition-default: all 0.6s ease-out;
@@ -89,23 +89,72 @@ input,
 textarea,
 button {
   font: 400 1rem var(--font-primary);
+  border: none;
+  border-radius: var(--default-radius);
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(80%);
+}
+
+body {
+  background-color: var(--light-yellow);
+}
+
+/* remove arrows input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* remove arrows input type number */
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  padding: 1rem 0 0.6rem 0.8rem;
+}
+input[type="text"],
+input[type="password"],
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  font-size: 2rem;
+  color: var(--whiteness);
+}
+
+.text-dark {
+  color: var(--darkness);
+}
+
+.text-white {
+  color: var(--whiteness);
 }
 
 .page-title {
   font-family: var(--font-secondary);
-  font-size: 5.6rem;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 60px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
 }
 
 .text-primary-lg {
   font-family: var(--font-primary);
+  font-weight: normal;
   font-size: 3.2rem;
   font-style: normal;
   line-height: 4.2rem;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
 }
 
@@ -115,7 +164,7 @@ button {
   font-style: normal;
   font-weight: normal;
   line-height: 1.9rem;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   /* text-align: center; */
 }
 
@@ -125,10 +174,26 @@ button {
   font-style: normal;
   font-weight: bold;
   line-height: 3.8rem;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
 }
 
+.react-date-picker{
+  background-color: blanchedalmond;
+}
+
+@media (min-width: 400px) {
+  .page-title {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 600px) {
+  .page-title {
+    font-size: 5.6rem;
+  }
+}
+
+/* Fonts */
 @media (max-width: 768px) {
   html {
     font-size: 50%;
