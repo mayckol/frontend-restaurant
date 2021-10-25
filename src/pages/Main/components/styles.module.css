@@ -1,0 +1,236 @@
+.productPrice {
+  color: var(--whiteness);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.productQuantity {
+  max-width: 3em;
+  height: 3rem;
+  text-align: center;
+}
+
+.total {
+  font-size: 1.6rem;
+}
+
+.btnQuantity,
+.btnQuantity > img {
+  width: 1.4em;
+  height: 1.4em;
+  display: block;
+}
+
+.btnQuantity,
+.btnQuantity > img,
+.groupQuantityIcons > span {
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.groupQuantityIcons > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 0;
+}
+
+.btnQuantity:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.groupHorizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.groupVertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.quantity {
+  font-size: 1.6rem;
+}
+
+.groupQuantityIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.groupQuantityIcons > span > img {
+  width: 16px;
+}
+
+.groupQuantityIcons > span:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.cartResume {
+  position: fixed;
+  right: calc(10%);
+  width: 70vw;
+  max-width: 310px;
+  z-index: 999;
+  padding: 2em;
+  border-radius: var(--default-radius);
+  box-shadow: var(--shadow-default);
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.iconCategoryProduct > img {
+  width: 2.4em;
+  height: 2.4em;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartItem h3 {
+  font-size: 1.2em;
+}
+
+.emptyCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  gap: 1rem;
+}
+
+.btnGroup {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--whiteness);
+  border-top: 1px solid var(--dark-brown);
+}
+
+.btnClear {
+  background-color: var(--dark-brown);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--whiteness);
+  font-size: 1.6rem;
+}
+
+.btnPay {
+  background-color: var(--darkness);
+  padding: 0.5rem 1.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--whiteness);
+  font-size: 1.6rem;
+}
+
+.paymentContainer {
+  position: fixed;
+  top: 10%;
+  width: 80%;
+  max-width: 500px;
+  background-color: var(--blue);
+  color: var(--whiteness);
+  border-radius: var(--default-radius);
+  z-index: 999;
+  left: 50%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  padding-bottom: 2em;
+  cursor: initial;
+}
+
+.wrapperForm {
+  padding: 3em;
+}
+
+.paymentCloseButton::after {
+  display: inline-block;
+  content: "\00d7";
+  font-size: 3rem;
+  position: absolute;
+  right: 10px;
+}
+
+.paymentTitle {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.paymentInputs {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+  gap: 1em;
+}
+
+.paymentInputs input {
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 1.6rem;
+  padding: 1rem 0 0.6rem 0.8rem;
+  color: var(--whiteness);
+}
+
+.paymentInputs input::placeholder {
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+.groupHorizontalInputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnPayTotal {
+  background-color: var(--darkness);
+  color: var(--whiteness);
+  padding: 0.6em 1em;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  float: right;
+}
+
+@media (min-width: 400px) {
+  .cartResume {
+    width: 60vw;
+  }
+
+  .cartItem h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media (min-width: 768px) {
+  .cartResume {
+    width: 40vw;
+  }
+
+  .cartItem h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cartResume {
+    width: 30vw;
+  }
+}
