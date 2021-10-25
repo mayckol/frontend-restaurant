@@ -1,0 +1,12 @@
+.titleDarkYellow {
+  color: var(--dark-yellow);
+  border-bottom: 1px solid var(--light-yellow);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.titleLightBrown {
+  color: var(--light-brown);
+  border-bottom: 1px solid var(--light-brown);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
