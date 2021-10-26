@@ -91,6 +91,13 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.modalSuccess {
+  background-color: green;
+  color: var(--whiteness);
+  font-size: 1.6rem;
+  text-align: center;
+}
+
 .iconCategoryProduct > img {
   width: 2.4em;
   height: 2.4em;
