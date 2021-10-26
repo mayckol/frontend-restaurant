@@ -18,20 +18,16 @@ export function LoginPage() {
     handleLogin(data);
   }
 
-  // useEffect(() => {
-  //   api.get("/users").then((res: any) => {
-  //     console.log(res);
-  //   });
-  // }, []);
   return (
     /* https://github.com/facebook/create-react-app/issues/9870 */
     <main
       style={{ backgroundImage: `url('/img/bg-login.jpg')` }}
       className={styles.container}
     >
-      <h1 className="page-title text-white">Eye Restaurant</h1>
+      
       {/* <p>{inputEmail.current?.value}</p> */}
       <form className={styles.wrapper}>
+      <h1 className="page-title text-dark">Eye Restaurant</h1>
         <input
           ref={inputEmail}
           type="text"
