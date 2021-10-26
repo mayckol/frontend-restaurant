@@ -12,30 +12,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .container > h1:first-child {
   margin-top: 2em;
+  background-color: var(--darkness);
+  padding: 1rem 2rem;
+  border-radius: var(--default-radius);
+  text-align: center;
+  width: 500px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  margin-top: 2em;
+  margin-top: 3em;
   padding: 4em 2em;
-  max-width: 400px;
+  max-width: 500px;
   min-height: 200px;
   border-radius: var(--default-radius);
   width: 80%;
 
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .btnSubmit {
   margin-top: auto;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 1rem;
   background-color: var(--darkness);
   color: var(--whiteness);
@@ -50,9 +56,6 @@
   }
 }
 @media (min-width: 600px) {
-  .btnSubmit {
-    font-size: 3rem;
-  }
   .wrapper {
     min-height: 250px;
   }
