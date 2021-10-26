@@ -61,6 +61,15 @@ a:active {
   box-shadow: none;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+button:disabled:hover {
+  filter: initial;
+}
+
 :root {
   /* fonts */
   --font-primary: Roboto Condensed, sans-serif;
@@ -178,7 +187,7 @@ input[type="password"]::placeholder {
   text-align: left;
 }
 
-.react-date-picker{
+.react-date-picker {
   background-color: blanchedalmond;
 }
 
