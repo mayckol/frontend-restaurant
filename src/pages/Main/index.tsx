@@ -8,6 +8,7 @@ import { Payment } from "./components/Payment";
 
 export function MainPage() {
   const [isDialogPaymentActive, setIsDialogPaymentActive] = useState(false);
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
   function onPrepareToPay() {
     setIsDialogPaymentActive(!isDialogPaymentActive);
   }
@@ -15,7 +16,11 @@ export function MainPage() {
   return (
     <CartProvider>
       <>
-        <CartResume onPrepareToPay={onPrepareToPay} />
+        <CartResume
+          onPrepareToPay={onPrepareToPay}
+          isBtnPayActive={isDialogPaymentActive}
+          isSuccessModal={isSuccessModal}
+        />
         <h1 className={`text-primary-lg ${styles.titleDarkYellow}`}>Meals</h1>
         <CarouselComponent {...{ category: ProductCategories.MEAL }} />
         <h1 className={`text-primary-lg ${styles.titleLightBrown}`}>Drinks</h1>
@@ -23,6 +28,7 @@ export function MainPage() {
         <Payment
           isVisible={isDialogPaymentActive}
           toggleIsVisible={onPrepareToPay}
+          setIsSuccessModal={setIsSuccessModal}
         />
       </>
     </CartProvider>
