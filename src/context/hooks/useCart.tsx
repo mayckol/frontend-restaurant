@@ -1,6 +1,16 @@
 import { useMemo, useState } from "react";
 import { ICart } from "../../interface/ICart";
 import { ICartItem, IProduct } from "../../interface";
+import api from "../../api";
+
+interface ISubmitRequest {
+  paymentData: {
+    startDate: Date;
+    cardNumber: string;
+    cardCVV: string;
+  };
+  cartItems: ICartItem[];
+}
 
 export const useCart = () => {
   const [cart, setCart] = useState<ICart>({
@@ -8,15 +18,28 @@ export const useCart = () => {
     shipping_value: 19.9,
   });
 
-  const setItems = (cartItems: ICartItem[]) =>
+  const setItems = (cartItems: ICartItem[]) => {
     setCart({
       cartItems,
     });
+  };
 
   function findByProduct(productId: number) {
     return cart.cartItems.find(
       (item) => item.product.id === productId
     ) as ICartItem;
+  }
+
+  async function store(data: ISubmitRequest) {
+    await api
+      .request<ISubmitRequest>({
+        url: "/cart",
+        method: "POST",
+        data,
+      })
+      .then(({ data }) => {
+        return data;
+      });
   }
 
   const decreaseProductQuantity = (product: IProduct) => {
@@ -67,7 +90,7 @@ export const useCart = () => {
       .reduce((prev, current) => prev + current)
       .toFixed(2);
   }, [cart.cartItems]);
-  
+
   return {
     cart,
     setCart,
@@ -75,5 +98,6 @@ export const useCart = () => {
     decreaseProductQuantity,
     increaseProductQuantity,
     totalCart,
+    store,
   };
 };
